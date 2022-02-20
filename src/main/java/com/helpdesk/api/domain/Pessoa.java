@@ -1,13 +1,19 @@
 package com.helpdesk.api.domain;
 
 import com.helpdesk.api.domain.enums.Perfil;
+import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public abstract class Pessoa {
+@Entity
+public abstract class Pessoa implements Serializable {
+    private static final long SerialVersionUID = 1L;
+    @Id
     protected Integer id;
     protected String nome;
     protected String cpf;
